@@ -1,0 +1,38 @@
+type weth_approval @entity {
+    id: ID!
+    evt_tx_hash: String!
+    evt_index: BigInt!
+    evt_block_time: String!
+    evt_block_number: BigInt!
+    guy: String!
+    src: String!
+    wad: BigDecimal!
+}
+type weth_deposit @entity {
+    id: ID!
+    evt_tx_hash: String!
+    evt_index: BigInt!
+    evt_block_time: String!
+    evt_block_number: BigInt!
+    dst: String!
+    wad: BigDecimal!
+}
+type weth_transfer @entity {
+    id: ID!
+    evt_tx_hash: String!
+    evt_index: BigInt!
+    evt_block_time: String!
+    evt_block_number: BigInt!
+    dst: String!
+    src: String!
+    wad: BigDecimal!
+}
+type weth_withdrawal @entity {
+    id: ID!
+    evt_tx_hash: String!
+    evt_index: BigInt!
+    evt_block_time: String!
+    evt_block_number: BigInt!
+    src: String!
+    wad: BigDecimal!
+}

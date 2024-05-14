@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+package contract.v1;
+
+message Events {
+    repeated weth_Approval weth_approvals = 1;
+    repeated weth_Deposit weth_deposits = 2;
+    repeated weth_Transfer weth_transfers = 3;
+    repeated weth_Withdrawal weth_withdrawals = 4;
+}
+
+message weth_Approval {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes src = 5;
+    bytes guy = 6;
+    string wad = 7;
+}
+
+message weth_Deposit {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes dst = 5;
+    string wad = 6;
+}
+
+message weth_Transfer {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes src = 5;
+    bytes dst = 6;
+    string wad = 7;
+}
+
+message weth_Withdrawal {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes src = 5;
+    string wad = 6;
+}
